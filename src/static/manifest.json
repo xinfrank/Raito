@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Raito",
+  "version": "1.0.0",
+  "description": "A browser extension that brings code syntax highlighting, a paste to clipboard function, and bright image protection to Reddit",
+  "author": "Frank Xin",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Raito",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.reddit.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
